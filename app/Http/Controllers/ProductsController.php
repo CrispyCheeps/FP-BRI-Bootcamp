@@ -27,7 +27,7 @@ class ProductsController extends Controller
 
         if ($product) {
 
-            return redirect()->back()->with('message', 'Data berhasil ditambahkan!');
+            return redirect()->route("form/emplyee/list")->with('message', 'Data berhasil ditambahkan!');
         } else {
             return response()->json([
                 'status' => '404',

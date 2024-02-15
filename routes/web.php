@@ -84,13 +84,13 @@ Route::controller(ForgotPasswordController::class)->group(function () {
 Route::controller(ProductsController::class)->group(function () {
     Route::post("product/add", "store")->middleware("auth")->name("addProduct");
     Route::post("products/delete/{id}", "destroy")->middleware("auth")->name("deleteProduct");
+    Route::get("product/list", "index")->middleware("auth")->name("form/emplyee/list");
 
     // Route::get("product", "getProducts")->middleware("auth")->name("addProduct");
     // Route::put("product", "getProducts")->middleware("auth")->name("addProduct");
 
-    Route::get('form/emplyee/list', 'index')->middleware('auth')->name('form/emplyee/list');
-    Route::get('form/employee/add', 'employeesAdd')->middleware('auth')->name('form/employee/add');
-    Route::get('form/leaves/page', 'leavesPage')->middleware('auth')->name('form/leaves/page');
+    // Route::get('form/emplyee/list', 'index')->middleware('auth')->name('form/emplyee/list');
+    Route::get('product/add/form', 'employeesAdd')->middleware('auth')->name('form/employee/add');
 });
 
 // ----------------------------- booking -----------------------------//
