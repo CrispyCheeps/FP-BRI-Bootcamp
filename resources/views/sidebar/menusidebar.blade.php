@@ -22,9 +22,9 @@
                 --}}
                 <li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Kategori </span> <span class="menu-arrow"></span></a>
                     <ul class="submenu_class" style="display: none;">
-                        <li><a class="{{ set_active(['form/allrooms/page']) }}" href="{{ route('form/allrooms/page') }}">All Rooms </a></li>
-                        <li><a class="{{ request()->is('form/room/edit/*') ? 'active' : '' }}"> Edit Rooms </a></li>
-                        <li><a class="{{ set_active(['form/addroom/page']) }}" href="{{ route('form/addroom/page') }}"> Add Rooms </a></li>
+                        <li><a class="{{ set_active(['listCategories']) }}" href="{{ route('listCategories') }}">List Categories </a></li>
+                        <li><a class="{{ set_active(['formAddCategory']) }}" href="{{ route('formAddCategory') }}"> Add Category </a></li>
+                        
                     </ul>
                 </li>
                 <li class="submenu"> <a href="#"><i class="fas fa-book"></i> <span> Products </span> <span class="menu-arrow"></span></a>

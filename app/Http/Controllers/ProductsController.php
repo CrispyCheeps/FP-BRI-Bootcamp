@@ -15,6 +15,16 @@ class ProductsController extends Controller
     public function index()
     {
         $product = Products::get();
+        if (empty($product)) {
+            $product->id(null);
+            $product->name("-");
+            $product->description("-");
+            $product->status("-");
+            $product->category_id("-");
+            $product->price("-");
+            $product->weight("-");
+            $product->img_url("-");
+        }
         return view("employees.employees_list", compact("product"));
     }
 

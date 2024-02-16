@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\UserManagementController;
@@ -91,6 +92,14 @@ Route::controller(ProductsController::class)->group(function () {
 
     // Route::get('form/emplyee/list', 'index')->middleware('auth')->name('form/emplyee/list');
     Route::get('product/add/form', 'employeesAdd')->middleware('auth')->name('form/employee/add');
+});
+
+// ----------------------------- Categories -----------------------------//
+Route::controller(CategoryController::class)->group(function () {
+    Route::get("categories/list", "index")->middleware("auth")->name("listCategories");
+    Route::post("categories/add", "store")->middleware("auth")->name("addCategory");
+    Route::get("categories/add/form", "addCategory")->middleware("auth")->name("formAddCategory");
+    Route::post("categories/delete/{id}", "destroy")->middleware("auth")->name("deleteCategory");
 });
 
 // ----------------------------- booking -----------------------------//
